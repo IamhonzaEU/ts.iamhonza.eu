@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>ts.IamhonzaEU</title>
-        <link rei="stylesheet" href="style/style.css" />
+        <link rel="stylesheet" href="style/style.css" />
         
         <meta charset="UTF-8">
         <!--Zákaz ukládání stránky do cache paměti prohlížeče-->
@@ -10,35 +10,116 @@
         <meta http-equiv="expires" content="0">
         <meta http-equiv="pragma" content="no-cache">
         
-        <style> 
-            
+        <style>
+            /* černé pozadí a bílý text pro čitelnost */
+            body { background-color: #000000; color: #ffffff; font-family: Inter, Arial, sans-serif; margin:0; -webkit-font-smoothing:antialiased; }
+            h1,h2,h3,h4,h5,h6,p,b,span,font,a { color: #ffffff; }
+            p { opacity: 0.95; }
+
+            /* dekorativní hero s logem */
+            .hero {
+                display:flex;
+                align-items:center;
+                gap:16px;
+                padding:28px 20px;
+                background: linear-gradient(135deg, rgba(6,10,15,0.6), rgba(0,25,30,0.75));
+                border-bottom: 1px solid rgba(255,255,255,0.03);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            }
+            .logo { width:96px; height:96px; flex:0 0 96px; }
+            .hero .title { font-size:24px; font-weight:700; letter-spacing:0.4px; margin:0 0 6px 0; }
+            .hero .subtitle { font-size:13px; color: rgba(255,255,255,0.8); margin:0; }
+
+            /* tlačítko pro TS */
+            .ts-btn {
+                display:inline-block;
+                margin-top:8px;
+                padding:8px 12px;
+                background: linear-gradient(180deg,#00c2e0,#00a3c4);
+                color:#001; border-radius:8px; text-decoration:none; font-weight:700;
+                box-shadow: 0 6px 18px rgba(0,178,216,0.12);
+            }
+
+            /* kontejner s jemným "glass" efektem */
+            .container { max-width:960px; margin:22px auto; padding:0 16px; }
+            .card {
+                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                border: 1px solid rgba(255,255,255,0.04);
+                padding:18px;
+                border-radius:10px;
+                box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+            }
+
+            /* jemné pozadí s radiálními skvrnami */
+            body::before {
+                content:"";
+                position:fixed;
+                inset:0;
+                background:
+                    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.02), transparent 6%),
+                    radial-gradient(circle at 85% 80%, rgba(0,180,216,0.03), transparent 8%);
+                pointer-events:none;
+                z-index:0;
+            }
+            /* zajistit, že obsah je nad pseudo-pozadím */
+            body > * { position:relative; z-index:1; }
+
+            /* drobné třídy místo inline stylů */
+            .card-header { text-align:center; margin-bottom:12px; }
+            .muted { color: rgba(255,255,255,0.85); font-size:15px; }
         </style>
     </head>
     
     <body>
+        <!-- přidaná hero sekce s jednoduchým SVG logem a tlačítkem -->
+        <header class="hero">
+            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="g1" x1="0" x2="1">
+                        <stop offset="0" stop-color="#00e0ff"/>
+                        <stop offset="1" stop-color="#0077aa"/>
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" rx="16" fill="url(#g1)"/>
+                <g fill="#001" font-family="Arial" font-weight="700" font-size="42" text-anchor="middle" transform="translate(50,60)">
+                    <text y="0">TS</text>
+                </g>
+            </svg>
 
-                 <p align="center">
-                    <b><font size="6px">IamhonzaEU GG</b></font><br/>
-                   Náš Teamspeak server web<br/>
-        
-                 <h2> Něco o Nás</h2>
-                <h3>Jsme 24/7 hodin online<br/>
-                     Náš Teamspeak je ts.iamhonza.eu nebo IamhonzaEU
-                              
-                    </h3>
-                    
-            
+            <div>
+                <div class="title">IamhonzaEU GG</div>
+                <p class="subtitle">Náš Teamspeak server — online 24/7</p>
+                <a class="ts-btn" href="ts3server://ts.iamhonza.eu" title="Připojit k Teamspeaku">Připojit k Teamspeaku</a>
+            </div>
+        </header>
 
-                </p>
-                
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        <main class="container">
+            <div class="card">
+                <!-- stručný, čistý popis -->
+                <header class="card-header">
+                    <h2 style="margin:0 0 6px 0;">IamhonzaEU GG</h2>
+                    <p class="muted">Připoj se na náš Teamspeak — online 24/7, přátelská komunita a kvalitní hlasová komunikace.</p>
+                </header>
+
+                <section>
+                    <h3 style="margin-top:8px;">Co u nás najdeš</h3>
+                    <ul>
+                        <li>Stabilní server s vysokou dostupností (24/7).</li>
+                        <li>Vlastní kanály pro hry, eventy a klidné hovory.</li>
+                        <li>Rychlá podpora od administrátorů.</li>
+                        <li>Bezpečné a slušné prostředí — dodržujeme jednoduchá pravidla chování.</li>
+                    </ul>
+
+                    <h3 style="margin-top:12px;">Jak se připojit</h3>
+                    <p>Adresa serveru: <strong>ts.iamhonza.eu</strong></p>
+                    <p>Stačí kliknout na tlačítko v hlavičce nahoře (nebo vložit adresu do klienta).</p>
+                </section>
+
+                <footer class="muted" style="margin-top:14px; font-size:13px;">
+                    <strong>Pravidla:</strong> Respektuj ostatní — žádný trolling ani spam. Více info při připojení.
+                </footer>
+            </div>
+        </main>
+
     </body>
 </html>
