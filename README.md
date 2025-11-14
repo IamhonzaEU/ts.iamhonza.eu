@@ -15,7 +15,7 @@ Adresa serveru: `ts.iamhonza.eu`
 Klikněte na odkaz „Připojit k Teamspeaku“ v hlavičce stránky nebo zadejte adresu do vašeho Teamspeak klienta.
 
 ## Podpora / Kontakt
-Pro problémy nebo dotazy kontaktujte správce serveru přes Teamspeak nebo e-mail (uveďte kontaktní údaje zde).
+Pro problémy nebo dotazy kontaktujte správce serveru přes Teamspeak (IamhonzaEU).
 
 ## Licence
 Tento projekt je uvolněn do veřejné domény pomocí Unlicense. Viz soubor `LICENSE` v repozitáři pro plné znění (volné použití, bez záruk).
