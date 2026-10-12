@@ -1,125 +1,181 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>ts.IamhonzaEU</title>
-        <link rel="stylesheet" href="style/style.css" />
-        
-        <meta charset="UTF-8">
-        <!--Zákaz ukládání stránky do cache paměti prohlížeče-->
-        <meta http-equiv="cache-control" content="no-cache">
-        <meta http-equiv="expires" content="0">
-        <meta http-equiv="pragma" content="no-cache">
-        
-        <style>
-            /* černé pozadí a bílý text pro čitelnost */
-            body { background-color: #000000; color: #ffffff; font-family: Inter, Arial, sans-serif; margin:0; -webkit-font-smoothing:antialiased; }
-            h1,h2,h3,h4,h5,h6,p,b,span,font,a { color: #ffffff; }
-            p { opacity: 0.95; }
-
-            /* dekorativní hero s logem */
-            .hero {
-                display:flex;
-                align-items:center;
-                gap:16px;
-                padding:28px 20px;
-                background: linear-gradient(135deg, rgba(6,10,15,0.6), rgba(0,25,30,0.75));
-                border-bottom: 1px solid rgba(255,255,255,0.03);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+<html lang="cs" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>IamhonzaEU GG — TeamSpeak Server</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                }
             }
-            .logo { width:96px; height:96px; flex:0 0 96px; }
-            .hero .title { font-size:24px; font-weight:700; letter-spacing:0.4px; margin:0 0 6px 0; }
-            .hero .subtitle { font-size:13px; color: rgba(255,255,255,0.8); margin:0; }
+        }
+    </script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-zinc-950 antialiased relative overflow-x-hidden">
 
-            /* tlačítko pro TS */
-            .ts-btn {
-                display:inline-block;
-                margin-top:8px;
-                padding:8px 12px;
-                background: linear-gradient(180deg,#00c2e0,#00a3c4);
-                color:#001; border-radius:8px; text-decoration:none; font-weight:700;
-                box-shadow: 0 6px 18px rgba(0,178,216,0.12);
-            }
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/10 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-indigo-500/5 blur-[150px] pointer-events-none rounded-full"></div>
 
-            /* kontejner s jemným "glass" efektem */
-            .container { max-width:960px; margin:22px auto; padding:0 16px; }
-            .card {
-                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-                border: 1px solid rgba(255,255,255,0.04);
-                padding:18px;
-                border-radius:10px;
-                box-shadow: 0 4px 30px rgba(0,0,0,0.6);
-            }
+    <header class="relative z-10 w-full max-w-4xl mx-auto px-4 pt-12 pb-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/80 p-6 sm:p-8 rounded-2xl shadow-2xl">
+            <div class="flex items-center gap-5">
+                <!-- Server Logo SVG -->
+                <div class="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-2xl p-0.5 shadow-lg shadow-cyan-500/20">
+                    <div class="w-full h-full bg-zinc-950 rounded-[14px] flex flex-col items-center justify-center">
+                        <span class="text-2xl sm:text-3xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">TS</span>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            <span class="text-[10px] uppercase font-semibold tracking-wider text-zinc-400">24/7</span>
+                        </div>
+                    </div>
+                </div>
 
-            /* jemné pozadí s radiálními skvrnami */
-            body::before {
-                content:"";
-                position:fixed;
-                inset:0;
-                background:
-                    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.02), transparent 6%),
-                    radial-gradient(circle at 85% 80%, rgba(0,180,216,0.03), transparent 8%);
-                pointer-events:none;
-                z-index:0;
-            }
-            /* zajistit, že obsah je nad pseudo-pozadím */
-            body > * { position:relative; z-index:1; }
-
-            /* drobné třídy místo inline stylů */
-            .card-header { text-align:center; margin-bottom:12px; }
-            .muted { color: rgba(255,255,255,0.85); font-size:15px; }
-        </style>
-    </head>
-    
-    <body>
-        <!-- přidaná hero sekce s jednoduchým SVG logem a tlačítkem -->
-        <header class="hero">
-            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <defs>
-                    <linearGradient id="g1" x1="0" x2="1">
-                        <stop offset="0" stop-color="#00e0ff"/>
-                        <stop offset="1" stop-color="#0077aa"/>
-                    </linearGradient>
-                </defs>
-                <rect width="100" height="100" rx="16" fill="url(#g1)"/>
-                <g fill="#001" font-family="Arial" font-weight="700" font-size="42" text-anchor="middle" transform="translate(50,60)">
-                    <text y="0">TS</text>
-                </g>
-            </svg>
-
-            <div>
-                <div class="title">IamhonzaEU GG</div>
-                <p class="subtitle">Náš Teamspeak server — online 24/7</p>
-                <a class="ts-btn" href="ts3server://ts.iamhonza.eu" title="Připojit k Teamspeaku">Připojit k Teamspeaku</a>
+                <div class="text-center sm:text-left">
+                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                        Oficiální TeamSpeak Server
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">IamhonzaEU GG</h1>
+                    <p class="text-sm text-zinc-400 mt-0.5">Hry, politika, debaty i trocha zdravého trollingu</p>
+                </div>
             </div>
-        </header>
 
-        <main class="container">
-            <div class="card">
-                <!-- stručný, čistý popis -->
-                <header class="card-header">
-                    <h2 style="margin:0 0 6px 0;">IamhonzaEU GG</h2>
-                    <p class="muted">Připoj se na náš Teamspeak — online 24/7, přátelská komunita a kvalitní hlasová komunikace.</p>
-                </header>
-
-                <section>
-                    <h3 style="margin-top:8px;">Co u nás najdeš</h3>
-                    <ul>
-                        <li>Stabilní server s vysokou dostupností (24/7).</li>
-                        <li>Vlastní kanály pro hry, eventy a klidné hovory.</li>
-                        <li>Rychlá podpora od administrátorů.</li>
-                        <li>Bezpečné a slušné prostředí — dodržujeme jednoduchá pravidla chování.</li>
-                    </ul>
-
-                    <h3 style="margin-top:12px;">Jak se připojit</h3>
-                    <p>Adresa serveru: <strong>ts.iamhonza.eu</strong></p>
-                    <p>Stačí kliknout na tlačítko v hlavičce nahoře (nebo vložit adresu do klienta).</p>
-                </section>
-
-                <footer class="muted" style="margin-top:14px; font-size:13px;">
-                    <strong>Pravidla:</strong> Respektuj ostatní — žádný trolling ani spam. Více info při připojení.
-                </footer>
+            <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                <a href="ts3server://ts.iamhonza.eu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-zinc-950 font-bold text-sm shadow-lg shadow-cyan-500/25 transition-all duration-200 transform hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                    Připojit k TS
+                </a>
+                <button onclick="copyIP()" id="copyBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-800/80 hover:bg-zinc-700/80 text-zinc-200 font-semibold text-sm border border-zinc-700/50 transition-all duration-200">
+                    <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                    <span id="copyText">Kopírovat IP</span>
+                </button>
             </div>
-        </main>
+        </div>
+    </header>
 
-    </body>
+    <main class="relative z-10 w-full max-w-4xl mx-auto px-4 py-4 flex-grow">
+        <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/70 p-6 sm:p-10 rounded-2xl shadow-xl">
+            
+            <!-- About Section -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">Vítej na IamhonzaEU GG</h2>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                    Připoj se na náš TeamSpeak — misto pro společné hraní her, žhavé politické debaty, noční pokec a trochu toho trollingu a banteru s komunitou.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-3">
+                        <!-- Gaming Controller SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 5M9 5M6 9h12a3 3 0 013 3v4a3 3 0 01-3 3H6a3 3 0 01-3-3v-4a3 3 0 013-3zm3 4v4m-2-2h4m8 0h.01m-3 0h.01"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-1">Hraní her & Squady</h3>
+                    <p class="text-sm text-zinc-400">Pravidelný gaming, hledání spoluhráčů i prostranství pro tvé vlastní herní grupy.</p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-3">
+                        <!-- Debate/Chat SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-1">Debaty & Politika</h3>
+                    <p class="text-sm text-zinc-400">Prostor pro diskusi o světě, politice a aktuálním dění. Názorová rozmanitost vítána.</p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3">
+                        <!-- Troll / Sparkles SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-1">Banter & Trocha Trolling</h3>
+                    <p class="text-sm text-zinc-400">Humor bez zbytečné přecitlivělosti. Přátelské rýpání a sranda k našemu TS patří.</p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3">
+                        <!-- Server Lightning SVG -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-1">Stabilní server 24/7</h3>
+                    <p class="text-sm text-zinc-400">Vysoká dostupnost, rychlá odezva a bezproblémový provoz v kteroukoliv denní dobu.</p>
+                </div>
+            </div>
+
+            <!-- How to Connect Box -->
+            <div class="bg-gradient-to-r from-cyan-950/30 to-blue-950/30 border border-cyan-500/20 p-5 sm:p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+                <div>
+                    <h3 class="font-semibold text-white mb-1">Adresa serveru</h3>
+                    <p class="text-sm text-zinc-300 font-mono bg-zinc-950/50 px-3 py-1 rounded border border-zinc-800 inline-block">ts.iamhonza.eu</p>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-400 text-center sm:text-right">
+                    Klikni na tlačítko nahoře nebo zkopíruj adresu přímo do klienta.
+                </p>
+            </div>
+
+            <!-- Rules Card -->
+            <div class="border-t border-zinc-800 pt-6">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0 mt-0.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white text-sm">Atmosféra & Pravidla</h4>
+                        <p class="text-sm text-zinc-400 mt-0.5">Ber věci s nadhledem. Trolluj s mírou, diskutuj s rozumem a zbytečně nespamuj. Více info najdeš po připojení.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="relative z-10 w-full max-w-4xl mx-auto px-4 py-8 text-center text-xs text-zinc-500 border-t border-zinc-900 space-y-2">
+        <p>This is free and unencumbered software released into the public domain.</p>
+        <p>
+            For more information, please refer to 
+            <a href="https://unlicense.org" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-cyan-400 underline transition-colors">unlicense.org</a>.
+        </p>
+    </footer>
+
+    <script>
+        // Copy IP function
+        function copyIP() {
+            const ip = "ts.iamhonza.eu";
+            const btn = document.getElementById('copyBtn');
+            const txt = document.getElementById('copyText');
+            
+            const textArea = document.createElement("textarea");
+            textArea.value = ip;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                txt.textContent = "Zkopírováno!";
+                btn.classList.add('bg-emerald-600/30', 'border-emerald-500/50', 'text-emerald-300');
+                setTimeout(() => {
+                    txt.textContent = "Kopírovat IP";
+                    btn.classList.remove('bg-emerald-600/30', 'border-emerald-500/50', 'text-emerald-300');
+                }, 2000);
+            } catch (err) {
+                console.error('Nepodařilo se zkopírovat IP', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
 </html>
