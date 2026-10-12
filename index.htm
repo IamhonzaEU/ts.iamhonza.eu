@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Zákaz ukládání do cache a žádné sledování -->
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="pragma" content="no-cache">
@@ -74,7 +75,7 @@
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">Vítej na IamhonzaEU GG</h2>
                 <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-                    Připoj se na náš TeamSpeak — misto pro společné hraní her, žhavé politické debaty, noční pokec a trochu toho trollingu a banteru s komunitou.
+                    Připoj se na náš TeamSpeak — místo pro společné hraní her, žhavé politické debaty, noční pokec a trochu toho trollingu a banteru s komunitou. Žádné sledování, žádné cookies, jen čistá komunikace.
                 </p>
             </div>
 
@@ -82,7 +83,6 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
                     <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-3">
-                        <!-- Gaming Controller SVG -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 5M9 5M6 9h12a3 3 0 013 3v4a3 3 0 01-3 3H6a3 3 0 01-3-3v-4a3 3 0 013-3zm3 4v4m-2-2h4m8 0h.01m-3 0h.01"/></svg>
                     </div>
                     <h3 class="font-semibold text-white mb-1">Hraní her & Squady</h3>
@@ -91,7 +91,6 @@
 
                 <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
                     <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-3">
-                        <!-- Debate/Chat SVG -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                     </div>
                     <h3 class="font-semibold text-white mb-1">Debaty & Politika</h3>
@@ -100,7 +99,6 @@
 
                 <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
                     <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3">
-                        <!-- Troll / Sparkles SVG -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
                     <h3 class="font-semibold text-white mb-1">Banter & Trocha Trolling</h3>
@@ -109,7 +107,6 @@
 
                 <div class="p-5 rounded-xl bg-zinc-800/30 border border-zinc-700/40 hover:border-cyan-500/30 transition-all duration-200">
                     <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3">
-                        <!-- Server Lightning SVG -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
                     <h3 class="font-semibold text-white mb-1">Stabilní server 24/7</h3>
@@ -153,7 +150,7 @@
     </footer>
 
     <script>
-        // Copy IP function
+        // Copy IP function (Stateless, no cookies, no tracking, local browser clipboard only)
         function copyIP() {
             const ip = "ts.iamhonza.eu";
             const btn = document.getElementById('copyBtn');
