@@ -1,21 +1,22 @@
-# ts.iamhonza.eu
+# 🌐 ts.iamhonza.eu — Oficiální TeamSpeak Landing Page
 
-Krátký web popisující veřejný Teamspeak server IamhonzaEU.
+Oficiální, extrémně minimalistická a lehce sarkastická vstupní stránka pro legendární TeamSpeak server **IamhonzaEU GG**.
 
-## Popis
-Tento repozitář obsahuje jednoduchou informační stránku pro Teamspeak server ts.iamhonza.eu. Stránka informuje o dostupnosti serveru, základních pravidlech a způsobu připojení.
+## 🛑 Co zde najdeš?
+* **Nulové sledování a žádné cookies:** Ani náš admin nestojí o to zjišťovat, co jsi za podivína.
+* **Hraní her a Sqvoty:** Místo, kde tě tvůj týmejt v 0.2 sekundě označí za důvod celosvětové krize.
+* **Debaty & Expertíza:** Přednášky od samozvaných politologů a geostrategů bez jakéhokoliv vzdělání.
+* **Banter & Mentální Odolnost:** Urážky jsou tu oficiální pozdrav.
+* **Nestabilní server:** Běží to na starém kusu hardwaru. Když to spadne, admin šel zrovna vařit čaj.
 
-## Funkce
-- Informace o serveru a pravidlech chování
-- Odkaz pro rychlé připojení (ts3://)
-- Jednoduchý responzivní design
+## 🚀 Rychlý start / Připojení
+* **IP adresa:** `ts.iamhonza.eu`
+* **Přímý odkaz:** [ts3server://ts.iamhonza.eu](ts3server://ts.iamhonza.eu)
 
-## Jak se připojit
-Adresa serveru: `ts.iamhonza.eu`  
-Klikněte na odkaz „Připojit k Teamspeaku“ v hlavičce stránky nebo zadejte adresu do vašeho Teamspeak klienta.
+## 🛠️ Technologie
+* **HTML5** & **CSS**
+* **[Tailwind CSS](https://tailwindcss.com/)** (cez CDN, protože zbytečné buildovací procesy jsou pro slabochy)
+* Čistý, statický kód bez zbytečných závislostí.
 
-## Podpora / Kontakt
-Pro problémy nebo dotazy kontaktujte správce serveru přes Teamspeak (IamhonzaEU).
-
-## Licence
-Tento projekt je uvolněn do veřejné domény pomocí Unlicense. Viz soubor `LICENSE` v repozitáři pro plné znění (volné použití, bez záruk).
+## 📄 Licence
+Tento projekt je šířen pod licencí **Unlicense** — je to volné dílo, protože to vlastně nemá cenu ani patentovat. Více na [unlicense.org](https://unlicense.org).
